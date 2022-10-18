@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO Of BAG</title>
+    <link rel="icon" href="{% static '/img/icon.svg' %}" />
+    <link rel="stylesheet" href="{% static '/css/nav.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/mobile.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/54c10e37be.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <section class="navigation" id="nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a class="site-logo" href="/"><img src="{% static 'img/Yussouf’s HQ logo.svg' %}" alt="" /></a>
+            </div>
+            <nav class="links-container">
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#topics" class="scroll-link">Topics</a></li>
+                    <li><a href="#thoughts" class="scroll-link">My Thoughts</a></li>
+                    <li><a href="#media" class="scroll-link">In Media</a></li>
+                    <li>
+                        <a class="get-in-touch" href="https://calendly.com/yussoufntwali/quick-introduction-meeting?back=1&month=2022-08"><button class="contact-btn">Let’s talk</button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section class="hr">
+        <div class="container">
+            <hr>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <div class="col-2">
+                <div class="col-left">
+                    <h1 class="heading">👋🏼Hi! I’m Yussouf Ntwali.</h1>
+                    <hr>
+                    <p class="bio">
+                        Hi, I'm Yussouf Ntwali, a Rwandan entrepreneur passionate about education, technology and  community building. I've been involved in several startups as a founder, operator and business 'guy' in Rwanda. I'm the Co-Founder & CEO of <a target="_blank" href="http://www.bag.work/">BAG</a>, one of the fastest growing edtechs in Africa. 
+                        <br><br>
+                        During the pandemic, I founded <a href="https://www.linkedin.com/company/startupsinrwanda/">Startups in Rwanda</a>, a community of early-stage founders and tech enthusiasts in Rwanda that promotes collaboration and ecosystem building through events and podcasts. I'm an active member of various fellowships including Kigali Global Shapers, Transcend Network, Westerwelle Young Founders Alumni, and ChangemakerXchange. 
+                        <br><br>
+                        Fun fact: Before my tech career, I was a music artist and released more than a dozen songs between 2011 and 2018.
+                    </p>
+                </div>
+                <div class="col-right">
+                    <img src="{% static 'img/Yussouf Ntwali..png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="topics" id="topics">
+        <div class="container">
+            <div class="col-2">
+                <div class="left-col">
+                    <h1>😀 Topic I like to
+                        chat about</13>
+                </div>
+                <div class="right-col">
+                    <div class="topic">📱 Personal Productivity</div>
+                    <div class="topic">🤼‍♂️ Building Teams</div>
+                    <div class="topic">🖼 Personal Branding </div>
+                    <div class="topic">📱 ✨ Idea to MVP </div>
+                    <div class="topic">🏆 Getting your First Customer</div>
+                    <div class="topic">🎤 Pitching your Startup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="thoughts" id="thoughts">
+        <div class="container">
+            <div class="top">
+                <h1 class="heading">🤔 My thoughts</h1>
+                <a href="https://yussouf.substack.com/"><button> <span>Subscribe To </span>My Substack</button></a>
+            </div>
+            <div class="blogs">
+                {% for thought in thoughts %}
+                <div class="blog">
+                    <div class="article">
+                        <h3 class="title">{{thought.title}}</h3>
+                        <p class="summary">
+                            {{thought.thought|slice:"150"}}
+                        </p>
+                        <a href="{{thought.thought_link}}" target="_blank">read more</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="media" id="media">
+        <div class="container">
+            <div class="top">
+                <h1 class="heading">📻 In the media</h1>
+                <a href=""><button><span>Subscripe to my </span>YouTube channel</button></a>
+            </div>
+            <div class="videos">
+                {% for link in youtubelinks %}
+                <div class="youtube-video">
+                    {{link.video_link | safe}}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href=""><img src="{% static '/img/icons/facebook.svg' %}" alt="" class="social-icon"></a>
+                <a href=""><img src="{% static '/img/icons/twitter.svg' %}" alt="" class="social-icon"></a>
+                <a href=""><img src="{% static '/img/icons/linkedin.svg' %}" alt="" class="social-icon"></a>
+                <a href=""><img src="{% static '/img/icons/discord.svg' %}" alt="" class="social-icon"></a>
+            </div>
+            <a href="#thoughts"><button>My thoughts</button></a>
+            <a href="#topics"><button>Topics I enjoy chatting about</button></a>
+            <a href="https://calendly.com/yussoufntwali/quick-introduction-meeting?back=1&month=2022-08"><button class="white">Let’s talk</button></a>
+
+        </div>
+    </footer>
+
+    <script src="{% static 'js/nav.js' %}"></script>
+</body>
+
+</html>

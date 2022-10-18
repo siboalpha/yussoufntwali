@@ -1,0 +1,223 @@
+$content-width: 1200px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$dark-color: #000000;
+$secondary-color: #ffffff;
+$primary-color: #2450fa;
+$hover-color: #286e9912;
+$text-color: rgb(92, 92, 92);
+$border-radius: 20px;
+$whitesmoke: whitesmoke;
+$section-spacing-desk: 80px;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: $text-color;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: $primary-color;
+    font-family: 'Quicksand', sans-serif;
+}
+img {
+    width: 100%;
+}
+
+//UTILITY CLASSES
+
+.container {
+    max-width: $content-width;
+    margin: auto;
+
+    .col-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: $border-radius;
+    outline: none;
+    border: 0;
+    background-color: $primary-color;
+    color: $secondary-color;
+    filter: drop-shadow(4px 4px 8px #286e9987);
+    transition: all .3s;
+
+    &:hover {
+        background-color: $hover-color;
+        color: $primary-color;
+    }
+}
+.heading {
+    color: $dark-color;
+    font-family: 'Quicksand', sans-serif;
+}
+//HR section
+.hr {
+    margin-top: $nav-height;
+
+    .container {
+        padding-top: 20px;
+        hr {
+            color: $whitesmoke;
+        }
+    }
+}
+
+.hero {
+    padding: $section-spacing-desk 0;
+
+    .container {
+        .col-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 100px;
+
+            .col-left {
+                width: 65%;
+                
+                hr {
+                    background-color:$primary-color;
+                    width: 100px;
+                    height: 5px;
+                    border: none;
+                    margin: 5px 0 20px 0;
+                }
+            }
+        }
+    }
+}
+
+.topics {
+    margin-bottom: $section-spacing-desk;
+
+    .container {
+        background-color: $primary-color;
+        padding: 50px;
+        color: $secondary-color;
+        border-radius: $border-radius;
+
+        .col-2 {
+            .right-col {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .topic {
+                    width: fit-content;
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    padding: 5px 10px;
+                    border-radius: $border-radius;
+                }
+            }
+        }
+    }
+}
+
+.thoughts {
+    margin-bottom: $section-spacing-desk;
+    .container {
+        .blogs {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 32% 32% 32%;
+            justify-content: space-between;
+            row-gap: 20px;
+
+            .blog {
+                background-color: $hover-color;
+                padding: 20px;
+                border-radius: $border-radius;
+
+                .article {
+                    .title {
+                        margin-bottom: 10px;
+                        font-weight: 700px;
+                        color: $dark-color;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media {
+    padding-bottom: $section-spacing-desk;
+    .container {
+        .videos {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 32% 32% 32%;
+            justify-content: space-between;
+            row-gap: 20px;
+
+            .youtube-video {
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    padding: 50px 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            a {
+                img {
+                    height: 44px;
+                    background-color: #3158f8;
+                    border-radius: 44px;
+                }
+            }
+        }
+        button {
+            border: 1px solid $secondary-color;
+            &:hover {
+                background-color: #4285af;
+                color: $secondary-color;
+            }
+        }
+        .white {
+            background-color: white;
+            color: $primary-color;
+        }
+    }
+}
